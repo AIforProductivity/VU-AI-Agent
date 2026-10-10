@@ -1,0 +1,9 @@
+# Runtime (MCP server) - the server itself needs only `mcp` + stdlib sqlite3.
+mcp>=1.0.0
+
+# Crawler / build only (tools/crawl_handbook.py)
+requests>=2.31
+beautifulsoup4>=4.12
+# PDF text extraction (the handbook links one policy PDF).
+# Install workspace-locally:  pip install --target .deps pypdf
+pypdf>=4.0

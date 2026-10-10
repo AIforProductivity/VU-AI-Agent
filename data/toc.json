@@ -1,0 +1,2262 @@
+[
+  {
+    "id": 0,
+    "title": "Home",
+    "url": null,
+    "depth": 1,
+    "children": [
+      {
+        "id": 1,
+        "title": "Profile of a VU Student",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/ProfileVUStudent.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 2,
+        "title": "Important Note",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/ImpNote.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 3,
+        "title": "Resources",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/Resources.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 4,
+        "title": "Facilities",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/Facilities.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 5,
+        "title": "How to Study at VU",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/StudyatVU.htm",
+        "depth": 2,
+        "children": [
+          {
+            "id": 6,
+            "title": "Getting Started",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/GettingStarted.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 7,
+            "title": "How to Take Lectures",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/LecturesatVU.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 8,
+            "title": "How to Do Assignments",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/AssignmentsatVU.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 9,
+            "title": "Email Etiquette",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/EmailEtiquette.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 10,
+            "title": "Plagiarism Sensitisation",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Plagiarism.htm",
+            "depth": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Examinations Department",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/ExaminationsDept.htm",
+        "depth": 2,
+        "children": [
+          {
+            "id": 12,
+            "title": "Conduct of Examination",
+            "url": null,
+            "depth": 3,
+            "children": [
+              {
+                "id": 13,
+                "title": "Date Sheet of Examinations",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/DateSheetSign.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 14,
+                "title": "Examinations within Pakistan",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ExaminationsWithinPakistan.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 15,
+                "title": "Appointment of Amanuensis/Typist",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Amanuensis.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 16,
+                "title": "Examinations for Overseas Students",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ExaminationsOutsidePakistan.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 17,
+                "title": "Cancellation of Examination",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/CancellationOfExamination.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 18,
+                "title": "Rescheduling of Unplanned/Missed Paper(s)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ReschedulingOfExaminations.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 19,
+                "title": "Unfair Means / Misbehavior / Violation of Examinations Regulations",
+                "url": null,
+                "depth": 4,
+                "children": [
+                  {
+                    "id": 20,
+                    "title": "Acts of Unfair Means",
+                    "url": "https://handbook.vu.edu.pk/HandBook_Pages/ActOfUnfairMeans.htm",
+                    "depth": 5,
+                    "children": []
+                  },
+                  {
+                    "id": 21,
+                    "title": "Acts of Misbehavior",
+                    "url": "https://handbook.vu.edu.pk/HandBook_Pages/ActsofMisbehavior.htm",
+                    "depth": 5,
+                    "children": []
+                  },
+                  {
+                    "id": 22,
+                    "title": "Acts of Violation of Examinations Regulations",
+                    "url": "https://handbook.vu.edu.pk/HandBook_Pages/ActsofViolationofExaminationsRegulations.htm",
+                    "depth": 5,
+                    "children": []
+                  },
+                  {
+                    "id": 23,
+                    "title": "Plagiarism Policy for Answer Scripts",
+                    "url": "https://handbook.vu.edu.pk/HandBook_Pages/PlagiarismPolicyforAnswerScripts.htm",
+                    "depth": 5,
+                    "children": []
+                  },
+                  {
+                    "id": 24,
+                    "title": "Processing of Unfair Means / Misbehavior / Violation of Examinations Regulations Cases",
+                    "url": "https://handbook.vu.edu.pk/HandBook_Pages/ProcessingofUnfairMeans%20Misbehavior%20ViolationofExaminationsRegulationsCases.htm",
+                    "depth": 5,
+                    "children": []
+                  },
+                  {
+                    "id": 25,
+                    "title": "Right to Appeal and Review of Appeal",
+                    "url": "https://handbook.vu.edu.pk/HandBook_Pages/RighttoAppealandReviewofAppeal.htm",
+                    "depth": 5,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 26,
+            "title": "Result",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Result.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 27,
+                "title": "General Criteria for Qualifying a Semester",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Criteria_for_Qualifying_a_Semester.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 28,
+                "title": "Re-Checking of Paper(s)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/RecheckingofPapers.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 29,
+                "title": "Merit Positions",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MeritPositions.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 30,
+                "title": "Gold Medals",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/GoldMedals.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 31,
+            "title": "Issuance of Documents",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/GeneralRegulations.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 32,
+                "title": "General Regulations",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/GeneralRegulations.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 33,
+                "title": "Final Transcript",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/FinalTranscript.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 34,
+                "title": "Additional Copies of Transcript of Record",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/AdditionalTranscript.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 35,
+                "title": "Partial Transcript",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PartialTranscript.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 36,
+                "title": "Degree",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Degree.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 37,
+                "title": "Diploma",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 38,
+                "title": "Specialization Certificate",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/SpecializationCertificate.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 39,
+                "title": "Professional Certificate",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ProfessionalCertificate.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 40,
+            "title": "Verification of Document",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Verification%20of%20Document.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 41,
+            "title": "Convocation",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Convocation.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 42,
+            "title": "Appendices",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Appendices.htm",
+            "depth": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "title": "Directorate of Finance",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/directorateofFinance.htm",
+        "depth": 2,
+        "children": [
+          {
+            "id": 44,
+            "title": "Fee Structure for Local Students",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/FeeStructure_Local.aspx",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 45,
+            "title": "Fee Structure for Overseas Students",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/FeeStructure_Overseas.aspx",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 46,
+            "title": "Schedule of Other Charges",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/FeeStructure_Misc.aspx",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 47,
+            "title": "Merit based Scholarships",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/MeritbasedScholarships.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 48,
+            "title": "Need based Scholarships",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/NeedbasedScholarships.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 49,
+            "title": "Fee Concession for Disabled Students",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Fee%20Concession%20for%20Disabled.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 50,
+            "title": "SOP for  Blocking",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/SOP%20Blocking%20Policy.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 51,
+            "title": "SOP for Installments of Full Semester Voucher",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/SOP%20installments%20of%20full%20semester%20voucher%20.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 52,
+            "title": "Adjustment of Unpaid dues from Security Refundable amount",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/SecurityRefundAdjustment%20.html",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 53,
+            "title": "Security Refund",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Security%20refund%20rules%20amendment.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 54,
+            "title": "Student Endowment Fund",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/StudentEndowmentFund.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 55,
+            "title": "Charging Semester Enrolment Fee + 1 Course Fee",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/ChargingSemesterEnrolmentFee.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 56,
+            "title": "Policy for Late Submission of Last Deliverable of Final Year Project",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/PolicyforLateSubmissionofFinalYearProject.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 57,
+            "title": "Endowment Fund (FAQs)",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/EndowmentFAQs.html",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 58,
+            "title": "Fee Concession Scheme for the employees of Corporate Sector, HEC Islamabad & MoIT",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Corporate%20Concession.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 59,
+            "title": "Policy for Refund of Dues to the Deceased Students",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/POLICY%20FOR%20REFUND%20OF%20DUES%20TO%20THE%20DECEASED%20STUDENTS.htm",
+            "depth": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 60,
+        "title": "Registrar Office",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/Procedure%20to%20apply%20for%20Course%20Exemption.htm",
+        "depth": 2,
+        "children": [
+          {
+            "id": 61,
+            "title": "Admission Withdrawal Request",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/AdmissionWithdrawal.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 62,
+            "title": "Student's Profile",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Profile%20updating%20rules%20in%20Handbook.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 63,
+            "title": "Campus Change or Status Change Request",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Campus%20and%20Status%20Change%20Information%20in%20Student%20Handbook%20-%20Final.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 64,
+            "title": "Semester Freeze",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Semester%20Freeze%20%20Rules.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 65,
+            "title": "Semester Unfreeze",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Semester%20UnFreeze%20%20Rules.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 66,
+            "title": "Procedure to apply for Course Exemption/Transfer",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/PROCEDURE%20TO%20APPLY%20FOR%20COURSE%20EXEMPTION.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 67,
+            "title": "Procedure to apply for Certificate",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/PROCEDURE%20TO%20APPLY%20FOR%20CERTIFICATE%20(Student%20Handbook).htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 68,
+            "title": "Picture Change in Student Profile",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Updated%20Picture%20Change%20in%20Student%20Profile.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 69,
+            "title": "Re-Admission Request",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Readmission%20Spring%202026%20updation%20.htm",
+            "depth": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 70,
+        "title": "Course Selection",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/CourseSelection.htm",
+        "depth": 2,
+        "children": [
+          {
+            "id": 71,
+            "title": "Associate Degree Programs",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Business%20Administration.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 72,
+                "title": "Accounting & Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/AccountingFinance.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 73,
+                "title": "Human Resource Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADHRM.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 74,
+                "title": "Islamic Banking",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADIslamicBanking.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 75,
+                "title": "Operations Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADOperationsManagement.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 76,
+                "title": "Sales and Marketing",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADSalesandMarketing.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 77,
+                "title": "Supply Chain Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADSupplyChainManagement.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 78,
+                "title": "Education (ADE) [In-service]",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADE(In-service).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 79,
+                "title": "Mass Communication",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rule%20for%20AD%20in%20Mass%20Communication.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 80,
+                "title": "Psychology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20for%20AD%20Psychology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 81,
+                "title": "Associate Degree in Science (Math, Stat, Eco.)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Science%20(Math,%20Stat,%20Eco.).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 82,
+                "title": "Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Education%20.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 83,
+                "title": "Early Childhood Care and Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Early%20Childhood%20Care%20and%20Education.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 84,
+                "title": "Associate Degree in Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20for%20the%20Associate%20Degree%20in%20Science%20-%20Updated%2023-10-23.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 85,
+                "title": "Computer Networking",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20Program%20in%20Computer%20Networking.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 86,
+                "title": "Database Management System",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20Program%20in%20Database%20Management%20System.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 87,
+                "title": "Computer Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20Program%20in%20Computer%20Science.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 88,
+                "title": "Web Design and Development",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20Program%20in%20Web%20Design%20and%20Development.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 89,
+                "title": "Business Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Business%20Administration.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 90,
+                "title": "Data Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20Program%20in%20Data%20Science.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 91,
+                "title": "Commerce",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20Associate%20Degree%20in%20Commerce.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 92,
+                "title": "Business Analytics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20AD%20Business%20Analytics.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 93,
+                "title": "Associate Degree in Arts",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Arts%20Course%20Selection.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 94,
+            "title": "Associate Degree Programs [w.e.f  Batch 2504]",
+            "url": null,
+            "depth": 3,
+            "children": [
+              {
+                "id": 95,
+                "title": "Computer Networking",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADP%20Computer%20Networking.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 96,
+                "title": "Computer Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADP%20Computer%20Science.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 97,
+                "title": "Data Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADP%20Data%20Science.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 98,
+                "title": "Database Management System",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADP%20Database%20Management%20System.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 99,
+                "title": "Web Design and Development",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADP%20Web%20Design%20and%20Development.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 100,
+                "title": "Accounting & Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Accounting%20and%20Finance.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 101,
+                "title": "Business Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20Business%20Administration.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 102,
+                "title": "Business Analytics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Business%20Analytics.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 103,
+                "title": "Commerce",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Commerce.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 104,
+                "title": "Islamic Banking",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20degree%20in%20Islamic%20Banking.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 105,
+                "title": "Early Childhood Care and Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Early%20Childhood%20Care%20and%20Education%202504.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 106,
+                "title": "Mathematics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADP%20Mathematics.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 107,
+                "title": "Sales and Marketing",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20degree%20in%20Sales%20and%20Marketing.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 108,
+                "title": "Economics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/ADP%20Economics%202025.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 109,
+                "title": "Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Education.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 110,
+                "title": "Human Resource Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Human%20Resource%20Management.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 111,
+                "title": "Operations Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Operations%20Management.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 112,
+                "title": "Public Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Public%20Administration%20AD.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 113,
+                "title": "Supply Chain Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Supply%20Chain%20Management.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 114,
+                "title": "Sociology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Associate%20Degree%20in%20Sociology.mht",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 115,
+            "title": "B.Ed",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/B.Ed.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 116,
+                "title": "B.Ed. Elementary",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/B.Ed(Elementary).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 117,
+                "title": "B.Ed. (Hons.) Elementry",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/B.Ed.%20(Hons.)%20Elementry.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 118,
+                "title": "B.Ed. (Hons.) Early Childhood Care and Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/B.Ed.%20Early%20Childhood%20Care%20and%20Education.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 119,
+                "title": "B.Ed. Elementary (2.5-Year)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/B.Ed.%20Elementary%20(2.5-Year).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 120,
+                "title": "B.Ed. Secondary (1.5-Year Program)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/B.Ed.%20Secondary%20(1.5-Year%20Program).htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 121,
+            "title": "Bachelors",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Bachelors.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 122,
+                "title": "B Com",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BCom.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 123,
+                "title": "B.Sc. (Math. Stat. Eco.)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BSCMSE.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 124,
+                "title": "BA",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BA.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 125,
+                "title": "BA-Business Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BA(BA).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 126,
+                "title": "BA-Mass Communication",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BA(MassComm).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 127,
+                "title": "BA-Psychology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BA(Psy).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 128,
+                "title": "BSc-Computer Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BSC(CS).htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 129,
+            "title": "BS",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 130,
+                "title": "Accounting & Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(AccFin).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 131,
+                "title": "Bachelor of Business & Information Technology (BBIT)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BBIT.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 132,
+                "title": "Banking & Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(bnk-fin).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 133,
+                "title": "Bioinformatics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(Bioinformatics).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 134,
+                "title": "Biotechnology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(Biotechnology).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 135,
+                "title": "Business Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(BusAdm).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 136,
+                "title": "Commerce",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(Commerce).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 137,
+                "title": "Computer Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(CS).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 138,
+                "title": "Information Technology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(IT).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 139,
+                "title": "Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(MGT).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 140,
+                "title": "Marketing",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(Marketing).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 141,
+                "title": "Mass Communication",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(Mass%20Communication).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 142,
+                "title": "Mass Communication (Batch 1902)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Mass%20Communication%20w.e.f.%20Spring%202019.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 143,
+                "title": "Psychology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(Psy).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 144,
+                "title": "Psychology (Batch 1902)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Psychology%20w.e.f%20Spring%202019.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 145,
+                "title": "Public Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS(PubAdm).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 146,
+                "title": "Software Engineering",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BSSoftwareEng.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 147,
+                "title": "Sociology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20(Sociology).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 148,
+                "title": "Economics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20(Economics).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 149,
+                "title": "Mathematics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20(Mathematics).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 150,
+                "title": "English (Applied Linguistics)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20BS%20English%20Applied%20Linguistics.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 151,
+                "title": "Zoology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Zoology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 152,
+                "title": "Islamic Studies",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20rules%20BS%20Islamic%20Studies.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 153,
+            "title": "BS [w.e.f Batch 2104- Fall 2021]",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Psychology.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 154,
+                "title": "Biotechnology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Biotechnology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 155,
+                "title": "Bioinformatics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20-%20BS%20Bioinformatics.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 156,
+                "title": "Business Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Business%20Administration1.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 157,
+                "title": "Computer Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20BS%20(Computer%20Science).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 158,
+                "title": "Information Technology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20BS%20(Information%20Technology).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 159,
+                "title": "Software Engineering",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20BS%20(Software%20Engineering).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 160,
+                "title": "Mathematics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Mathematics%20from%202104%20Revised.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 161,
+                "title": "Zoology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Zoology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 162,
+                "title": "BS English (Applied Linguistics)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20BS%20Applied%20Linguistics%20%20-%20Fall%202023.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 163,
+                "title": "Bachelor of Business and  Information Technology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20BBIT%20Updated.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 164,
+                "title": "Commerce",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20BS%20Commerce%20Updated.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 165,
+                "title": "Public Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20BS%20Public%20Administration%20Updated.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 166,
+                "title": "Economics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Economics%20(w.e.f%20Fall%202021).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 167,
+                "title": "Data Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Data%20Science%20Course%20Selection%20Rules.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 168,
+                "title": "Mass Communication",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules-BS%20Mass%20Comm%20(Revised).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 169,
+                "title": "Psychology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20BS%20Psychology%20-%20updated.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 170,
+                "title": "B.Ed. (Hons.) Early Childhood Care and Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/B.Ed.%20Hons.%20Early%20Childhood%20Care%20and%20Education.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 171,
+                "title": "B.Ed. (Hons.) Elementary",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/B.Ed.%20Hons.%20Elementary.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 172,
+                "title": "Sociology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Sociology%20Course%20Selection%20Rules%20Fall%202024.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 173,
+            "title": "BS [w.e.f Batch 2504]",
+            "url": null,
+            "depth": 3,
+            "children": [
+              {
+                "id": 174,
+                "title": "Computer Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Computer%20Science.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 175,
+                "title": "Data Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Data%20Science.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 176,
+                "title": "Information Technology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Information%20Technology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 177,
+                "title": "Software Engineering",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Software%20Engineering.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 178,
+                "title": "Public Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Public%20Administration.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 179,
+                "title": "B.Ed. (Hons) Elementary",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/B.Ed.%20(Hons)%20Elementary.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 180,
+                "title": "B.Ed. (Hons.) Early Childhood Care and Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/B.Ed.%20(Hons.)%20Early%20Childhood%20Care%20and%20Education.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 181,
+                "title": "Mathematics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Mathematics.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 182,
+                "title": "Accounting and Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Accounting%20and%20Finance.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 183,
+                "title": "Business Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Business%20Administration.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 184,
+                "title": "Commerce",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Commerce.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 185,
+                "title": "Bachelor of Business and Information Technology BBIT",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Bachelor%20of%20Business%20and%20Information%20Technology%20BBIT%202025.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 186,
+                "title": "Mass Communication",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20rules-%20BS%20Mass%20Comm.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 187,
+                "title": "Economics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Economics%202025%20(1)%20(1).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 188,
+                "title": "BS English (Applied Linguistics)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20English%20(Applied%20Linguistics).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 189,
+                "title": "BS Bioinformatics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20BioinformaticS%202504.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 190,
+                "title": "Psychology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules%20BS%20Psychology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 191,
+                "title": "Sociology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Sociology.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 192,
+            "title": "BS-Lateral",
+            "url": null,
+            "depth": 3,
+            "children": [
+              {
+                "id": 193,
+                "title": "Computer Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS-Lateral%20Computer%20Science.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 194,
+                "title": "Information Technology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS-Lateral%20Information%20Technology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 195,
+                "title": "Software Engineering",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS-Lateral%20Software%20Engineering.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 196,
+                "title": "Accounting and Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Lateral%20Accounting%20and%20Finance.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 197,
+                "title": "Bachelor of Business & Information Technology (BBIT)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Lateral%20Bachelor%20of%20Business%20And%20Information%20Technology%20BBIT.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 198,
+                "title": "Commerce",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Lateral%20Commerce.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 199,
+                "title": "Mathematics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Lateral%20Mathematics.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 200,
+                "title": "Public Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS-Lateral%20Public%20Administration.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 201,
+                "title": "B.Ed. (Hons.) Early Childhood Care and Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Lateral%20B.Ed.%20(Hons.)%20Early%20Childhood%20Care%20and%20Education.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 202,
+                "title": "B.Ed. (Hons) Elementary",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Lateral%20B.Ed.%20(Hons)%20Elementary.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 203,
+                "title": "Sociology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Lateral%20Degree.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 204,
+                "title": "Economics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS-Lateral%20Economics.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 205,
+                "title": "Business Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Lateral%20Business%20Administration.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 206,
+                "title": "BS English (Applied Linguistics) Lateral",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Course%20Selection%20Rules-BS%20Lareal-20092025.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 207,
+                "title": "BS Lateral Bioinformatics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Lateral%20Bioinformatics%202504.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 208,
+                "title": "Mass Communication",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS%20Lateral%20Mass%20Communication.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 209,
+                "title": "Psychology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/BS-Lateral%20Psychology.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 210,
+            "title": "Deficiency Semester(s)",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Deficiency%20Semester(s).htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 211,
+                "title": "Leading to MBA (Equivalent to MS) / MS in Business Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/DeficencyMBACourse%20Selection.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 212,
+                "title": "Leading to MCS / MIT",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/DeficencyMITMCSCourse%20Selection.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 213,
+                "title": "Leading to MSCS",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/DeficencyMSCSCourseSelection.html",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 214,
+            "title": "Diploma",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20Program.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 215,
+                "title": "Diploma in CS & IT",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/DCSIT.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 216,
+                "title": "PGD In Accounting",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDAccounting%20Course%20Selection.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 217,
+                "title": "PGD in Applied Psychology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDAppPsy.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 218,
+                "title": "PGD in Accounting & Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDAccFin.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 219,
+                "title": "PGD in Banking & Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDBankFin.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 220,
+                "title": "PGD In Business Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDBA.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 221,
+                "title": "PGD in Computer Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDCS.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 222,
+                "title": "PGD In Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDEducation.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 223,
+                "title": "PGD in Entrepreneurship & SME Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDEntrSME.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 224,
+                "title": "PGD in Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDFin.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 225,
+                "title": "PGD in HRM",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDHRM.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 226,
+                "title": "PGD in Information Technology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDIT.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 227,
+                "title": "PGD in Marketing Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDMarkMgt.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 228,
+                "title": "PGD in Public Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGDPubAdmin.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 229,
+                "title": "PGD In Television Production",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGD(TVProduction).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 230,
+                "title": "PGD in English Laguage Teaching (ELT)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGD%20in%20English%20Language%20Teaching%20(ELT).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 231,
+                "title": "PGD in Linguistics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGD%20in%20Linguistics.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 232,
+                "title": "PGD in Molecular Biology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PGD%20Molecular%20Biology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 233,
+                "title": "Diploma in Accounting",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Accounting.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 234,
+                "title": "Diploma in Accounting & Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Accounting%20&%20Finance.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 235,
+                "title": "Diploma in Applied Psychology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Applied%20Psychology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 236,
+                "title": "Diploma in Banking & Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Banking%20&%20Finance.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 237,
+                "title": "Diploma in Business Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Business%20Administration.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 238,
+                "title": "Diploma in Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Education.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 239,
+                "title": "Diploma in English Language Teaching (ELT)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20English%20Language%20Teaching%20(ELT).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 240,
+                "title": "Diploma in Linguistics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Linguistics.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 241,
+                "title": "Diploma in Entrepreneurship & SME Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Entrepreneurship%20&%20SME%20Management.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 242,
+                "title": "Diploma in Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Finance.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 243,
+                "title": "Diploma in Human Resource Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Human%20Resource%20Management.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 244,
+                "title": "Diploma in Marketing Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Marketing%20Management.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 245,
+                "title": "Diploma in Public Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Public%20Administration.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 246,
+                "title": "Diploma in TV Production",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20TV%20Production.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 247,
+                "title": "Diploma in Molecular Biology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Molecular%20Biology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 248,
+                "title": "Diploma in Bioinformatics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Bioinformatics.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 249,
+                "title": "Diploma in Information Technology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Information%20Technology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 250,
+                "title": "Diploma in Computer Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Diploma%20in%20Computer%20Science.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 251,
+            "title": "Diploma [w.e.f Batch 2504]",
+            "url": null,
+            "depth": 3,
+            "children": [
+              {
+                "id": 252,
+                "title": "Computer Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Computer%20Science%20Diploma.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 253,
+                "title": "Information Technology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Information%20Technology%20Diploma.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 254,
+                "title": "Human Resource Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Human%20Resource%20Management%20Diploma.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 255,
+                "title": "Public Administration",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Public%20Administration%20Diploma.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 256,
+            "title": "Masters",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Masters.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 257,
+                "title": "M. Accounting",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MasterAccounting.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 258,
+                "title": "M. Accounting & Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MasterAccFin.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 259,
+                "title": "M. Banking & Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MasterBankFin.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 260,
+                "title": "M. Finance",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Masterfinance.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 261,
+                "title": "M. HRM",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MasterHRM.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 262,
+                "title": "M. Operation & Supply Chain Management",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Master(OperationsandSupplyChainManagement)%20.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 263,
+                "title": "M.Com",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/M.Com%20Course%20selection.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 264,
+                "title": "M. Economics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MasterEconomics.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 265,
+                "title": "M.Sc. Mass Communication",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/M.Sc(Mass%20Communication).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 266,
+                "title": "MB Econ",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MBeconCourse%20Selection.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 267,
+                "title": "MBA",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MBA.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 268,
+                "title": "MBA-Exec. (72 Cr. Hrs. / 2 Years)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MBA%2072%20Cr.%20Hrs.%20-%202%20Years.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 269,
+                "title": "MBS",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MBS%20Course%20Selection.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 270,
+                "title": "MCS",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MCS.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 271,
+                "title": "MIT",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MIT.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 272,
+                "title": "MPA",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MPA%20Course%20Selection.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 273,
+                "title": "M.Sc. Zoology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MSc%20Zoology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 274,
+                "title": "M.Sc. Applied Psychology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MSc%20Applied%20Psychology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 275,
+                "title": "M.Sc. Organizational Psychology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MSc%20Organizational%20Psychology.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 276,
+                "title": "M.Sc. Mathematics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/M.Sc.%20(Mathematics).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 277,
+                "title": "M.Sc. Statistics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/M.Sc.%20(Statistics).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 278,
+                "title": "M.Ed Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/Master%20of%20Education%20(M.Ed).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 279,
+                "title": "MA ELT",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MA%20ELT.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 280,
+            "title": "MBA",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/MBA%20Program.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 281,
+                "title": "MBA (36 Cr. Hrs. / 1.5 Years)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MBA%201.5%20years.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 282,
+                "title": "MBA (72 Cr. Hrs. / 2.5 Years)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MBA%2072%20Cr.%20Hrs.%20-%202.5%20Years.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 283,
+                "title": "MBA (96 Cr. Hrs. / 3.5 Years)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MBA%2096%20Cr.%20Hrs.%20-%203.5%20Years.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 284,
+            "title": "MS",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/MS.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 285,
+                "title": "M.Phil in Education",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/M.%20Phil(Education).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 286,
+                "title": "MBA (Equiv. to MS 1.5 Year)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MBAEqMSCourseSelection.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 287,
+                "title": "MS in Bioinformatics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MS(Bioinformatics).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 288,
+                "title": "MS in Biotechnology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MS(Biotechnology).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 289,
+                "title": "MS in Business Administration (1.5 Year)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MSBACourse%20Selection.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 290,
+                "title": "MS in Genetics",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MS(Genetics).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 291,
+                "title": "MS in Zoology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MS(Zoology).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 292,
+                "title": "MS in Molecular Biology",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MS(Molecular%20Biology).htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 293,
+                "title": "MBA (Equ. to MS) 2-year Revised",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MBA(Equ.toMS)2-yearRevised.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 294,
+                "title": "MSBA (Master of Science Business Administration) 2-year Revised",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MSBA(MBA2-yearRevised)%20.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 295,
+                "title": "MBA (Equivalent to MS) with Business & Non-Business Qualification",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MBA%20Equivalent%20to%20MS%20with%20effect%20from%20Fall%202024.htm",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 296,
+                "title": "MS in Mathematics  (Research Thesis / Course Work Track)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MS(Mathematics).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 297,
+                "title": "MS in Computer Science",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MSCS.html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 298,
+                "title": "MS in Computer Science [2504]",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/MS%20Computer%20Science.htm",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 299,
+            "title": "Ph.D",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/Ph.D.htm",
+            "depth": 3,
+            "children": [
+              {
+                "id": 300,
+                "title": "Ph.D (Biotechnology)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PhD(Biotechnology).html",
+                "depth": 4,
+                "children": []
+              },
+              {
+                "id": 301,
+                "title": "Ph.D (CS)",
+                "url": "https://handbook.vu.edu.pk/HandBook_Pages/PhD(CS).html",
+                "depth": 4,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 302,
+        "title": "IT Department",
+        "url": null,
+        "depth": 2,
+        "children": [
+          {
+            "id": 303,
+            "title": "VU Email Deletion (Inactive Students)",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/SOP_Inactive.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 304,
+            "title": "VU Email Deletion (Withdrawn Students)",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/SOP_Withdrawn.htm",
+            "depth": 3,
+            "children": []
+          },
+          {
+            "id": 305,
+            "title": "VU Email Deletion (Passout Students)",
+            "url": "https://handbook.vu.edu.pk/HandBook_Pages/SOP_Passout.htm",
+            "depth": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 306,
+        "title": "VU Contacts",
+        "url": null,
+        "depth": 2,
+        "children": [
+          {
+            "id": 307,
+            "title": "Contact Us",
+            "url": "http://www.vu.edu.pk/services.aspx",
+            "depth": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 308,
+        "title": "Min and Max Time Duration for Degree Completion",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/Minimum%20and%20Maximum%20Time%20Duration%20for%20the%20Completion%20of%20a%20Degree%20Program.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 309,
+        "title": "VU Plagiarism Policy",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/VU%20Plagiarism%20Policy.pdf",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 310,
+        "title": "Student Discipline and Conduct Regulations",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/Student%20Discipline%20and%20Conduct%20Regulations.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 311,
+        "title": "Admission Policy and Regulations",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/Admission%20Policy%20and%20Regulations.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 312,
+        "title": "Academic Rules and Regulation",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/Academic%20Rules%20and%20Regulations.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 313,
+        "title": "Policy for Students with Disabilities",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/Policy%20for%20Students%20with%20Disabilities%20at%20Higher%20Education%20Institutions.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 314,
+        "title": "Policy on Protection against Sexual Harassment",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/Policy%20on%20Protection%20against%20Sexual%20Harassment.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 315,
+        "title": "Women Harassment at Workplace Act",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/The%20Protection%20Against%20Harassment%20of%20Women%20at%20Workplace%20Act.html",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 316,
+        "title": "Policy on Drug and Tobacco Abuse",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/HEC%20-%20Durg%20Abuse%20Policy%20adopted%20by%20VU.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 317,
+        "title": "Examination Regulations (Conduct) 2021, Virtual University of Pakistan",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/Examination%20Regulations%20-%202021.htm",
+        "depth": 2,
+        "children": []
+      },
+      {
+        "id": 318,
+        "title": "Rules and Regulations for Extra and Co-Curricular Activities",
+        "url": "https://handbook.vu.edu.pk/HandBook_Pages/Rules%20and%20Regulations%20for%20Extra%20and%20Co-Curricular%20Activities,%20Virtual%20University%20of%20Pakistan.htm",
+        "depth": 2,
+        "children": []
+      }
+    ]
+  }
+]
