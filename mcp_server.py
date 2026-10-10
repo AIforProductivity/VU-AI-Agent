@@ -19,16 +19,23 @@ hitting the VU web server on every agent turn. Refresh with::
 Run (stdio transport, e.g. for Claude Desktop / any MCP client)::
 
     python3 mcp_server.py
+
+Run (Streamable HTTP transport, for production / remote agents)::
+
+    python3 mcp_server.py --http --host 0.0.0.0 --port 8000 --allow-host vumcp.example.com
 """
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import re
 import sqlite3
+import sys
 from pathlib import Path
 
 from mcp.server.fastmcp import FastMCP
+from mcp.server.streamable_http import TransportSecuritySettings
 
 SOURCE_NAME = "Virtual University of Pakistan — Student Handbook"
 SOURCE_URL = "https://handbook.vu.edu.pk/"
@@ -66,7 +73,9 @@ def _db() -> sqlite3.Connection:
             f"Handbook database not found at {DB_PATH}. "
             "Run: python3 tools/crawl_handbook.py"
         )
-    con = sqlite3.connect(DB_PATH)
+    # Read-only: the MCP server must never mutate the snapshot (the crawler owns writes).
+    # journal_mode=delete (not WAL), so mode=ro opens cleanly without -shm access.
+    con = sqlite3.connect(f"{DB_PATH.resolve().as_uri()}?mode=ro", uri=True)
     con.row_factory = sqlite3.Row
     return con
 
@@ -538,5 +547,62 @@ def stats_resource() -> str:
     )
 
 
+# --------------------------------------------------------------------------
+# transport: stdio (default) or Streamable HTTP (production)
+# --------------------------------------------------------------------------
+@mcp.custom_route("/healthz", methods=["GET"])
+async def _healthz(request):
+    """Liveness probe for HTTP deployments (no DB access, cheap)."""
+    from starlette.responses import JSONResponse
+
+    return JSONResponse({"status": "ok", "source": SOURCE_NAME})
+
+
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        prog="mcp_server.py",
+        description="VU Handbook MCP server. stdio by default; --http for Streamable HTTP.",
+    )
+    parser.add_argument("--http", action="store_true",
+                        help="serve over Streamable HTTP instead of stdio")
+    parser.add_argument("--host", default="127.0.0.1",
+                        help="HTTP bind address (use 0.0.0.0 to expose; then pass --allow-host)")
+    parser.add_argument("--port", type=int, default=8000,
+                        help="HTTP port (default: 8000)")
+    parser.add_argument("--allow-host", action="append", default=[], metavar="HOST",
+                        help="extra allowed Host header, e.g. 'vumcp.example.com' or '10.0.0.5:*' (repeatable)")
+    parser.add_argument("--allow-origin", action="append", default=[], metavar="ORIGIN",
+                        help="extra allowed Origin for browser clients, e.g. 'https://app.example.com' (repeatable)")
+    parser.add_argument("--stateless", action="store_true",
+                        help="stateless HTTP mode: no session ids (for multi-instance deployments)")
+    args = parser.parse_args(argv)
+
+    if not args.http:
+        mcp.run(transport="stdio")
+        return
+
+    # DNS-rebinding protection stays ON: start from the SDK's localhost-only
+    # policy and add only what the operator explicitly allows.
+    security = mcp.settings.transport_security
+    mcp.settings.transport_security = TransportSecuritySettings(
+        enable_dns_rebinding_protection=security.enable_dns_rebinding_protection,
+        allowed_hosts=list(dict.fromkeys([*security.allowed_hosts, *args.allow_host])),
+        allowed_origins=list(dict.fromkeys([*security.allowed_origins, *args.allow_origin])),
+    )
+    mcp.settings.host = args.host
+    mcp.settings.port = args.port
+    mcp.settings.stateless_http = args.stateless
+
+    if args.host not in ("127.0.0.1", "localhost", "::1") and not args.allow_host:
+        print(
+            "warning: binding to non-loopback address without --allow-host; "
+            "requests with remote Host headers will be rejected "
+            "(DNS-rebinding protection). Add --allow-host <your-hostname>.",
+            file=sys.stderr,
+        )
+
+    mcp.run(transport="streamable-http")
+
+
 if __name__ == "__main__":
-    mcp.run(transport="stdio")
+    main()

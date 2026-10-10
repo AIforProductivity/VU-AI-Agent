@@ -27,6 +27,7 @@ hammer the VU web server.
 ```bash
 pip install mcp                      # server runtime
 python3 mcp_server.py                # stdio transport
+python3 mcp_server.py --http         # Streamable HTTP transport
 ```
 
 ### Register with an MCP client
@@ -58,6 +59,43 @@ async with stdio_client(params) as (r, w):
         hits = await s.call_tool("vu_handbook_search",
                                  {"query": "how do I apply for semester freeze"})
         page = await s.call_tool("vu_handbook_get", {"page": 64})
+```
+
+### Run over HTTP (production)
+
+```bash
+python3 mcp_server.py --http --host 0.0.0.0 --port 8000 --allow-host vumcp.example.com
+```
+
+| Flag | Meaning |
+|---|---|
+| `--http` | Streamable HTTP transport instead of stdio |
+| `--host` / `--port` | bind address (loopback by default) |
+| `--allow-host HOST` | extra allowed `Host` header — **required** for non-loopback binds (repeatable, `host:*` wildcards work) |
+| `--allow-origin ORIGIN` | extra allowed `Origin` for browser-based clients (repeatable) |
+| `--stateless` | no session ids, for multi-instance / load-balanced deployments |
+
+- **Health probe:** `GET /healthz` → `{"status": "ok"}` (no DB access).
+- **DNS-rebinding protection is ON:** requests with a spoofed `Host` are
+  rejected with **421 Misdirected Request**, a foreign `Origin` with **403**.
+  Loopback (`127.0.0.1`, `localhost`, `[::1]`) always works; anything else
+  must be granted via `--allow-host` / `--allow-origin`.
+- **Read-only:** the server opens SQLite with `mode=ro`, so an agent bug can
+  never mutate the snapshot — only `tools/crawl_handbook.py` writes.
+- **Concurrent sessions are safe:** verified by `tests/test_http.py`
+  (8 simultaneous sessions, distinct session ids, shared read-only DB).
+
+Connect from code:
+
+```python
+from mcp import ClientSession
+from mcp.client.streamable_http import streamablehttp_client
+
+async with streamablehttp_client("http://127.0.0.1:8000/mcp") as (r, w, sid):
+    async with ClientSession(r, w) as s:
+        await s.initialize()
+        hits = await s.call_tool("vu_handbook_search",
+                                 {"query": "how do I apply for semester freeze"})
 ```
 
 ## Tools
@@ -103,7 +141,8 @@ returning the wrong page.
 ```bash
 pip install --target .deps pypdf        # PDF text extraction (workspace-local)
 python3 tools/crawl_handbook.py --refresh-toc --workers 4
-python3 tests/test_mcp.py               # 53 end-to-end protocol checks
+python3 tests/test_mcp.py               # 53 end-to-end protocol checks (stdio)
+python3 tests/test_http.py              # 20 HTTP transport checks (spawns server)
 python3 tests/eval_queries.py           # retrieval quality on real questions
 ```
 
@@ -172,11 +211,12 @@ returns 0 results plus the escalation note rather than a lucky single hit.
 ## Layout
 
 ```
-mcp_server.py                 the MCP server (stdio)
+mcp_server.py                 the MCP server (stdio + Streamable HTTP)
 tools/vu_handbook_client.py   TOC expansion + page fetch (postbacks, retries)
 tools/extract.py              HTML/PDF -> markdown, encoding handling
 tools/crawl_handbook.py       build data/ snapshot
-tests/test_mcp.py             end-to-end protocol tests (53 checks)
+tests/test_mcp.py             end-to-end protocol tests, stdio (53 checks)
+tests/test_http.py            HTTP transport tests (20 checks)
 tests/eval_queries.py         retrieval quality eval (12 questions)
 data/                         generated snapshot
 ```
