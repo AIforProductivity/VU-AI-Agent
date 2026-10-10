@@ -1,0 +1,10 @@
+.deps/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.pytest_cache/
+data/.staging/
+data/.last-good/
+tests/
+tools/

@@ -7,10 +7,12 @@ client (Claude Desktop, LangGraph, a support agent) would.
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
 from mcp import ClientSession, StdioServerParameters
+from mcp.client.stdio import get_default_environment
 from mcp.client.stdio import stdio_client
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -43,8 +45,14 @@ async def call(s: ClientSession, name: str, args: dict) -> tuple[dict, bool, str
 
 
 async def main() -> int:
+    # MCP's stdio client sandboxes the child env; forward the data-dir override
+    # so gates can run against a staging snapshot (tools/refresh.py).
+    child_env = get_default_environment()
+    if "VU_HANDBOOK_DATA" in os.environ:
+        child_env["VU_HANDBOOK_DATA"] = os.environ["VU_HANDBOOK_DATA"]
     params = StdioServerParameters(
-        command=sys.executable, args=[str(ROOT / "mcp_server.py")], cwd=str(ROOT)
+        command=sys.executable, args=[str(ROOT / "mcp_server.py")], cwd=str(ROOT),
+        env=child_env,
     )
     async with stdio_client(params) as (r, w):
         async with ClientSession(r, w) as s:

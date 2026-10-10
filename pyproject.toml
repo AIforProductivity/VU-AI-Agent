@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vu-handbook-mcp"
+version = "0.1.0"
+description = "MCP server exposing the Virtual University of Pakistan Student Handbook"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["mcp>=1.13,<2"]
+keywords = ["mcp", "model-context-protocol", "virtual-university", "rag", "handbook"]
+
+[project.scripts]
+vu-handbook-mcp = "mcp_server:main"
+
+# The snapshot (data/) is intentionally NOT bundled: set VU_HANDBOOK_DATA or
+# run from a checkout that has data/ (see README).
+[tool.setuptools]
+py-modules = ["mcp_server"]

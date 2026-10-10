@@ -1,5 +1,5 @@
 # Runtime (MCP server) - the server itself needs only `mcp` + stdlib sqlite3.
-mcp>=1.0.0
+mcp>=1.13,<2   # 2.x renames FastMCP; this server is written against the 1.x API
 
 # Crawler / build only (tools/crawl_handbook.py)
 requests>=2.31

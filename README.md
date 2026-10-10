@@ -25,10 +25,17 @@ hammer the VU web server.
 ## Quick start
 
 ```bash
-pip install mcp                      # server runtime
-python3 mcp_server.py                # stdio transport
-python3 mcp_server.py --http         # Streamable HTTP transport
+pip install .                        # installs 'vu-handbook-mcp' (pins mcp<2)
+vu-handbook-mcp                      # stdio transport
+vu-handbook-mcp --http               # Streamable HTTP transport
+
+# or without installing:
+pip install "mcp>=1.13,<2"
+python3 mcp_server.py [--http ...]
 ```
+
+> The server is written against the **mcp 1.x API** (verified on 1.30.0).
+> mcp 2.x renamed `FastMCP`, so every entry point pins `<2`.
 
 ### Register with an MCP client
 
@@ -98,6 +105,17 @@ async with streamablehttp_client("http://127.0.0.1:8000/mcp") as (r, w, sid):
                                  {"query": "how do I apply for semester freeze"})
 ```
 
+Docker:
+
+```bash
+docker build -t vu-handbook-mcp .
+docker run -p 8000:8000 vu-handbook-mcp --allow-host vumcp.example.com
+```
+
+The image entrypoint is `mcp_server.py`, so any flag above can be appended.
+A `HEALTHCHECK` polls `/healthz`. The image ships the snapshot but not the
+crawler — refresh on the host with `tools/refresh.py`, then rebuild.
+
 ## Tools
 
 ### `vu_handbook_contents(path="", depth=2)`
@@ -136,7 +154,30 @@ returning the wrong page.
 | `vu-handbook://page/{page_id}` | Raw markdown of one page |
 | `vu-handbook://stats` | Snapshot coverage statistics |
 
-## Rebuilding the snapshot
+## Refreshing the snapshot (safe)
+
+```bash
+python3 tools/refresh.py                # recrawl -> gates -> atomic swap
+```
+
+The live site can change or break at any time, so a refresh never overwrites
+a working snapshot directly:
+
+1. crawl into `data/.staging/` (fresh TOC + all pages, 0 fetch failures required)
+2. sanity gates — file presence, page count (>= 290), char count (>= 500k)
+3. protocol gate — `tests/test_mcp.py` (53 checks) run against **staging**
+4. retrieval gate — `tests/eval_queries.py`, at least **10/12** expected pages in top-3
+5. only then swap — current files copied to `data/.last-good/`, then
+   atomically replaced (`os.replace`)
+
+Any failing gate keeps `data/` untouched and exits 1. Verified both paths:
+a forced gate failure leaves the live snapshot byte-identical; a real
+end-to-end refresh passed all gates and swapped cleanly.
+
+Useful flags: `--min-eval 11`, `--min-pages 300`, `--skip-crawl`
+(re-run gates on existing staging), `--keep-staging`, `--workers N`.
+
+Manual / one-off runs:
 
 ```bash
 pip install --target .deps pypdf        # PDF text extraction (workspace-local)
@@ -212,11 +253,14 @@ returns 0 results plus the escalation note rather than a lucky single hit.
 
 ```
 mcp_server.py                 the MCP server (stdio + Streamable HTTP)
+tools/refresh.py              gated refresh: staging -> tests -> atomic swap
 tools/vu_handbook_client.py   TOC expansion + page fetch (postbacks, retries)
 tools/extract.py              HTML/PDF -> markdown, encoding handling
 tools/crawl_handbook.py       build data/ snapshot
 tests/test_mcp.py             end-to-end protocol tests, stdio (53 checks)
 tests/test_http.py            HTTP transport tests (20 checks)
 tests/eval_queries.py         retrieval quality eval (12 questions)
-data/                         generated snapshot
+pyproject.toml                 packaging + 'vu-handbook-mcp' entry point
+Dockerfile                     production image (Streamable HTTP)
+data/                         generated snapshot (refresh: data/.last-good/)
 ```
