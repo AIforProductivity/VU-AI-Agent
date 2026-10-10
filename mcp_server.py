@@ -44,6 +44,9 @@ DATA_DIR = Path(os.environ.get("VU_HANDBOOK_DATA", Path(__file__).resolve().pare
 DB_PATH = DATA_DIR / "handbook.db"
 TOC_PATH = DATA_DIR / "toc.json"
 
+LMS_SOURCE_NAME = "VU LMS Reverse Engineering Guide (vulms.vu.edu.pk)"
+LMS_DIR = Path(os.environ.get("VU_LMS_DIR", Path(__file__).resolve().parent / "docs" / "lms"))
+
 MAX_CONTENT_CHARS = 40_000
 DEFAULT_SEARCH_LIMIT = 8
 MAX_SEARCH_LIMIT = 25
@@ -52,14 +55,22 @@ MAX_SEARCH_LIMIT = 25
 _BM25_WEIGHTS = "10.0, 6.0, 3.0, 1.0"
 
 mcp = FastMCP(
-    "vu-handbook",
+    "vu-student-support",
     instructions=(
-        f"Authoritative source: {SOURCE_NAME} ({SOURCE_URL}). "
-        "Use vu_handbook_search to find relevant pages, vu_handbook_contents to "
-        "navigate the table of contents, and vu_handbook_get to read a full page. "
-        "Always cite the returned 'source' and 'breadcrumb' when answering students. "
-        "If the handbook does not cover a question, say so and escalate to VU's "
-        "official Support System rather than guessing."
+        "Static knowledge for Virtual University of Pakistan students, two corpora. "
+        f"(1) POLICY AND REGULATIONS - {SOURCE_NAME} ({SOURCE_URL}): "
+        "vu_handbook_search finds relevant pages, vu_handbook_contents navigates the "
+        "table of contents, vu_handbook_get reads a full page. "
+        f"(2) LMS NAVIGATION - {LMS_SOURCE_NAME}: "
+        "vu_lms_contents maps every LMS page/feature, vu_lms_get reads one section, "
+        "vu_lms_search answers 'where do I find/click X' questions. "
+        "Use the handbook for rules (dates, fees, eligibility, exam policy) and the "
+        "LMS guide for procedures (where a page is, what a tab shows, form fields). "
+        "ALWAYS cite the returned 'source' (and 'breadcrumb'/'section') when answering. "
+        "Live student data (Notice Board, To Do Calendar deadlines, grades, fees) is "
+        "never served here: ask the student to paste it from their logged-in LMS. "
+        "If neither corpus covers a question, say so and escalate to VU's official "
+        "Support System rather than guessing."
     ),
 )
 
@@ -548,8 +559,194 @@ def stats_resource() -> str:
 
 
 # --------------------------------------------------------------------------
+# LMS guide corpus (docs/lms/*.md -> h2 sections, small and static)
+# --------------------------------------------------------------------------
+_LMS_CACHE: list[dict] | None = None
+
+
+def _lms() -> list[dict]:
+    """Sections of every markdown file in LMS_DIR, split on h2 headings."""
+    global _LMS_CACHE
+    if _LMS_CACHE is not None:
+        return _LMS_CACHE
+    sections: list[dict] = []
+    if LMS_DIR.exists():
+        for path in sorted(LMS_DIR.glob("*.md")):
+            text = path.read_text(encoding="utf-8")
+            header: list[str] = []
+            title: str | None = None
+            body: list[str] = []
+
+            def flush() -> None:
+                if title:
+                    sections.append({"file": path.name, "title": title,
+                                     "text": "\n".join(body).strip()})
+
+            for line in text.splitlines():
+                if line.startswith("## "):
+                    flush()
+                    title, body = line[3:].strip(), []
+                elif title is None:
+                    header.append(line)
+                else:
+                    body.append(line)
+            flush()
+            if any(l.strip() for l in header):
+                sections.append({"file": path.name, "title": f"{path.stem} — introduction",
+                                 "text": "\n".join(header).strip()})
+    _LMS_CACHE = sections
+    return sections
+
+
+def _lms_resolve(section: str) -> dict:
+    """Resolve a section by exact title, unique substring, or vulms URL."""
+    sections = _lms()
+    if not sections:
+        raise FileNotFoundError(
+            f"No LMS guide found at {LMS_DIR}. Expected docs/lms/*.md")
+    want = section.strip().lower()
+    for s in sections:
+        if s["title"].lower() == want:
+            return s
+    if "://" in section:  # a URL: find sections documenting it
+        hits = [s for s in sections if section in s["text"]]
+        if len(hits) == 1:
+            return hits[0]
+        if hits:
+            raise LookupError(json.dumps({"error": "ambiguous_url",
+                                          "candidates": [h["title"] for h in hits]}))
+    hits = [s for s in sections if want in s["title"].lower()
+            or want in s["text"].lower()]
+    if len(hits) == 1:
+        return hits[0]
+    if hits:
+        raise LookupError(json.dumps({"error": "ambiguous_section",
+                                      "candidates": [h["title"] for h in hits[:10]]}))
+    raise LookupError(json.dumps({"error": "section_not_found", "query": section,
+                                  "hint": "call vu_lms_contents for the section list"}))
+
+
+@mcp.tool()
+def vu_lms_contents() -> dict:
+    """Map of the VU LMS (vulms.vu.edu.pk): every page/feature, its URL, and
+    its subsections. Call this BEFORE answering "where do I find/click X" or
+    "how does Y work in the LMS" questions, then read details with vu_lms_get."""
+    sections = _lms()
+    if not sections:
+        raise FileNotFoundError(f"No LMS guide found at {LMS_DIR}")
+    files: dict[str, list[dict]] = {}
+    for s in sections:
+        subs = re.findall(r"^### (.+)$", s["text"], re.M)
+        files.setdefault(s["file"], []).append(
+            {"title": s["title"], "subsections": subs})
+    return {
+        "source": LMS_SOURCE_NAME,
+        "files": files,
+        "dynamic_note": (
+            "Notice Board and To Do Calendar change DAILY and are not served here: "
+            "ask the student to paste them from their logged-in LMS."),
+    }
+
+
+@mcp.tool()
+def vu_lms_get(section: str) -> dict:
+    """Read one LMS guide section in full.
+
+    Args:
+    section: a section title ("Grade Book"), a unique substring, or a full
+    vulms.vu.edu.pk URL (matches the section that documents it).
+
+    Returns the section markdown plus its source file and neighbours, so a
+    follow-up hop needs no extra lookup. Ambiguous titles raise an error
+    listing candidates instead of guessing.
+    """
+    hit = _lms_resolve(section)
+    idx = next(i for i, s in enumerate(_lms()) if s is hit)
+    all_sections = _lms()
+    neighbours = [s["title"] for s in
+                  (all_sections[max(0, idx - 1):idx] + all_sections[idx + 1:idx + 2])]
+    return {
+        "source": LMS_SOURCE_NAME,
+        "file": hit["file"],
+        "section": hit["title"],
+        "content": hit["text"][:MAX_CONTENT_CHARS],
+        "truncated": len(hit["text"]) > MAX_CONTENT_CHARS,
+        "neighbouring_sections": neighbours,
+    }
+
+
+@mcp.tool()
+def vu_lms_search(query: str, limit: int = 5) -> dict:
+    """Keyword search across the LMS guide and operational notes.
+
+    Args:
+    question or keywords, e.g. "where is semester freeze", "challan payment
+    modes", "GDB deadline". limit: max results (1-15).
+
+    Returns ranked sections with a snippet and the source file; follow up with
+    vu_lms_get(section). Empty results means the guide does not cover this -
+    do not invent LMS procedures.
+    """
+    if not query.strip():
+        raise ValueError("query must not be empty")
+    limit = max(1, min(int(limit), 15))
+    terms = _significant_terms(query)
+    scored: list[tuple[float, dict, str]] = []
+    for s in _lms():
+        title_l = s["title"].lower()
+        text_l = s["text"].lower()
+        title_hits = sum(1 for t in terms if t in title_l)
+        body_hits = sum(1 for t in terms if t in text_l)
+        coverage = body_hits / len(terms) if terms else 0.0
+        if not terms or coverage < 0.5 and title_hits == 0:
+            continue
+        score = 3.0 * title_hits + 1.0 * body_hits + (2.0 if coverage == 1.0 else 0.0)
+        first = next((ln for ln in s["text"].splitlines()
+                      if any(t in ln.lower() for t in terms)), s["text"][:120])
+        scored.append((score, s, first.strip()[:220]))
+    scored.sort(key=lambda x: -x[0])
+    top = scored[:limit]
+    return {
+        "source": LMS_SOURCE_NAME,
+        "query": query,
+        "count": len(top),
+        "results": [
+            {"title": s["title"], "file": s["file"], "snippet": snip,
+             "matched_terms": [t for t in terms
+                               if t in s["title"].lower() or t in s["text"].lower()],
+             "rank": round(score, 3)}
+            for score, s, snip in top
+        ],
+        "note": (
+            "No match found - the LMS guide does not cover this. Say so instead "
+            "of inventing LMS procedures; for account issues escalate to VU's "
+            "Support System."
+            if not top else None),
+    }
+
+
+# --------------------------------------------------------------------------
 # transport: stdio (default) or Streamable HTTP (production)
 # --------------------------------------------------------------------------
+@mcp.resource("vu-lms://sections")
+def lms_sections_resource() -> str:
+    """Every LMS guide section: file, title, subsections."""
+    return json.dumps(
+        {"source": LMS_SOURCE_NAME,
+         "sections": [{"file": s["file"], "title": s["title"],
+                       "subsections": re.findall(r"^### (.+)$", s["text"], re.M)}
+                      for s in _lms()]},
+        ensure_ascii=False, indent=2,
+    )
+
+
+@mcp.resource("vu-lms://guide")
+def lms_guide_resource() -> str:
+    """The complete LMS guide + operational notes as one markdown document."""
+    return "\n\n---\n\n".join(
+        f"## {s['title']}\n\n{s['text']}" for s in _lms())
+
+
 @mcp.custom_route("/healthz", methods=["GET"])
 async def _healthz(request):
     """Liveness probe for HTTP deployments (no DB access, cheap)."""

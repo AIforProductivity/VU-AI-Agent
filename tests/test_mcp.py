@@ -62,8 +62,9 @@ async def main() -> int:
             tools = await s.list_tools()
             names = sorted(t.name for t in tools.tools)
             print("\n[1] tools/list")
-            check("3 tools exposed", len(names) == 3, str(names))
-            for expected in ("vu_handbook_contents", "vu_handbook_search", "vu_handbook_get"):
+            check("6 tools exposed", len(names) == 6, str(names))
+            for expected in ("vu_handbook_contents", "vu_handbook_search", "vu_handbook_get",
+                             "vu_lms_contents", "vu_lms_search", "vu_lms_get"):
                 check(f"tool present: {expected}", expected in names, str(names))
             for t in tools.tools:
                 check(f"described: {t.name}", bool(t.description) and len(t.description) > 80)
@@ -76,6 +77,57 @@ async def main() -> int:
             check("toc resource", any("://toc" in u for u in rnames), str(rnames))
             check("stats resource", any("stats" in u for u in rnames), str(rnames))
             check("page resource TEMPLATE", any("page/" in u for u in tnames), str(tnames))
+            check("lms sections resource", any("vu-lms://sections" in u for u in rnames), str(rnames))
+            check("lms guide resource", any("vu-lms://guide" in u for u in rnames), str(rnames))
+
+            # ---- 1b. LMS guide corpus ------------------------------------
+            print("\n[1b] LMS guide tools")
+            res = await s.call_tool("vu_lms_contents", {})
+            data = json.loads(res.content[0].text)
+            guide_secs = data["files"].get("VU_LMS_Guide.md", [])
+            ops_secs = data["files"].get("OPERATIONAL_NOTES.md", [])
+            check("lms contents: both files listed", guide_secs and ops_secs,
+                  str(list(data["files"])))
+            check("lms contents: >= 15 guide sections", len(guide_secs) >= 15, str(len(guide_secs)))
+            check("lms contents: dynamic note present", "DAILY" in data.get("dynamic_note", ""))
+
+            res = await s.call_tool("vu_lms_get", {"section": "Grade Book"})
+            data = json.loads(res.content[0].text)
+            check("lms get by title", data["section"] == "Grade Book")
+            check("lms get: content has real div ids", "StudentGradeBook" in data["content"])
+
+            res = await s.call_tool(
+                "vu_lms_get", {"section": "https://vulms.vu.edu.pk/AccountBook/AccountBook.aspx"})
+            data = json.loads(res.content[0].text)
+            check("lms get by URL", data["section"] == "Account Book", data["section"])
+
+            res = await s.call_tool("vu_lms_get", {"section": "course"})
+            check("lms get: ambiguous -> error with candidates", bool(res.isError))
+
+            res = await s.call_tool("vu_lms_get", {"section": "no-such-thing-xyz"})
+            check("lms get: unknown -> error", bool(res.isError))
+
+            res = await s.call_tool("vu_lms_search", {"query": "where is semester freeze", "limit": 3})
+            data = json.loads(res.content[0].text)
+            check("lms search: semester freeze -> Student Services top-3",
+                  any(r["title"] == "Student Services" for r in data["results"]),
+                  str([r["title"] for r in data["results"]]))
+
+            res = await s.call_tool("vu_lms_search", {"query": "GDB deadline days to attempt"})
+            data = json.loads(res.content[0].text)
+            check("lms search: GDB windows -> operational notes",
+                  any("To Do Calendar" in r["title"] for r in data["results"]),
+                  str([r["title"] for r in data["results"]]))
+
+            res = await s.call_tool("vu_lms_search", {"query": "zzzqqqxyz spaceship launch code"})
+            data = json.loads(res.content[0].text)
+            check("lms search: nonsense -> 0 + escalation note",
+                  data["count"] == 0 and bool(data["note"]), str(data["count"]))
+
+            res = await s.read_resource("vu-lms://sections")
+            secs = json.loads(res.contents[0].text)
+            check("lms sections resource parses", len(secs["sections"]) >= 18,
+                  str(len(secs["sections"])))
 
             # ---- 2. navigation ------------------------------------------
             print("\n[3] vu_handbook_contents()")

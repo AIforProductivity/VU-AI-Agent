@@ -1,8 +1,15 @@
 # VU Handbook MCP
 
-A Model Context Protocol server that exposes the **Virtual University of
-Pakistan Student Handbook** (<https://handbook.vu.edu.pk/>) as a single,
-scoped, citable knowledge source for AI agents.
+A Model Context Protocol server that gives any MCP-capable AI two scoped,
+citable knowledge sources about Virtual University of Pakistan students:
+
+1. **Student Handbook** (<https://handbook.vu.edu.pk/>) — policy and regulations
+2. **VU LMS Guide** (`docs/lms/`) — reverse-engineered map of
+   <https://vulms.vu.edu.pk> — every page, tab, form and where to click
+
+Server name: `vu-student-support`. Live student data (Notice Board, To Do
+Calendar deadlines, grades) is never served: that flows through the paste
+ingestion pipeline (`ingest/`) into agent sessions.
 
 This is **step one** of the multi-agent student support system: the handbook
 is the authoritative source for nearly all student guidance, so it gets its
@@ -68,6 +75,33 @@ async with stdio_client(params) as (r, w):
         page = await s.call_tool("vu_handbook_get", {"page": 64})
 ```
 
+### Attach to any MCP client
+
+**Claude Desktop / Claude Code (local, stdio):**
+
+```json
+{
+  "mcpServers": {
+    "vu-student-support": {
+      "command": "python3",
+      "args": ["/absolute/path/to/mcp_server.py"],
+      "cwd": "/absolute/path/to/project"
+    }
+  }
+}
+```
+
+**Claude Code:** `claude mcp add vu-student-support -- python3 /path/to/mcp_server.py`
+
+**ChatGPT / remote clients (Streamable HTTP):** host the server publicly
+(Docker image or `--http --host 0.0.0.0` behind HTTPS) and register the
+`https://your-host/mcp` endpoint as a remote MCP server. Loopback stays
+locked by default; grant your hostname with `--allow-host`.
+
+**Anything else:** stdio and Streamable HTTP are the two standard MCP
+transports — any client supporting either connects with the config above.
+The server has no auth requirements and serves only public reference data.
+
 ### Run over HTTP (production)
 
 ```bash
@@ -119,7 +153,8 @@ crawler — refresh on the host with `tools/refresh.py`, then rebuild.
 ## Paste ingestion (`ingest/`)
 
 The read-only front door of the support system (see `docs/VISION.md               initial product vision (v0.1, modifiable)
-docs/lms/VU_LMS_Guide.md     full VULMS reverse-engineering map (15 sections)
+docs/lms/VU_LMS_Guide.md     full VULMS reverse-engineering map (16 sections)
+docs/lms/OPERATIONAL_NOTES.md dynamic-source cadence (To Do windows, date sheet)
 ingest/                      paste ingestion: clean -> structure -> store
 tools/VISION.md`): the
 student copies a logged-in VULMS page and pastes it; we clean, structure and
@@ -169,6 +204,23 @@ capped at 40 000 chars with `truncated`), and `navigation` (`parent`,
 An ambiguous title raises an error listing candidate ids rather than silently
 returning the wrong page.
 
+## LMS tools
+
+### `vu_lms_contents()`
+Map of the VULMS portal: every file, section and subsection (Home Dashboard,
+Course Pages, Grade Book tabs, Account Book challans, Student Services forms,
+Support System categories, …). Call before answering "where do I find X".
+
+### `vu_lms_get(section)`
+Read one section in full. `section` accepts a title (`"Grade Book"`), a unique
+substring, or a full vulms URL (matches the section documenting it). Ambiguous
+titles raise an error listing candidates.
+
+### `vu_lms_search(query, limit=5)`
+Keyword search across the LMS guide + operational notes (deadline windows,
+date-sheet mechanics). Empty results carry an explicit "do not invent LMS
+procedures" note.
+
 ## Resources
 
 | URI | Contents |
@@ -176,6 +228,8 @@ returning the wrong page.
 | `vu-handbook://toc` | Complete nested table of contents |
 | `vu-handbook://page/{page_id}` | Raw markdown of one page |
 | `vu-handbook://stats` | Snapshot coverage statistics |
+| `vu-lms://sections` | Every LMS guide section + subsections |
+| `vu-lms://guide` | Full LMS guide + operational notes as markdown |
 
 ## Refreshing the snapshot (safe)
 
@@ -205,8 +259,8 @@ Manual / one-off runs:
 ```bash
 pip install --target .deps pypdf        # PDF text extraction (workspace-local)
 python3 tools/crawl_handbook.py --refresh-toc --workers 4
-python3 tests/test_mcp.py               # 53 end-to-end protocol checks (stdio)
-python3 tests/test_http.py              # 20 HTTP transport checks (spawns server)
+python3 tests/test_mcp.py               # 73 end-to-end protocol checks (stdio)
+python3 tests/test_http.py              # 21 HTTP transport checks (spawns server)
 python3 tests/eval_queries.py           # retrieval quality on real questions
 ```
 

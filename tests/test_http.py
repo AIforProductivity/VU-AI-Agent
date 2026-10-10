@@ -29,7 +29,8 @@ from mcp.client.streamable_http import streamablehttp_client  # noqa: E402
 
 PORT = int(os.environ.get("VU_HTTP_TEST_PORT", "8123"))
 BASE = f"http://127.0.0.1:{PORT}"
-EXPECTED_TOOLS = {"vu_handbook_contents", "vu_handbook_search", "vu_handbook_get"}
+EXPECTED_TOOLS = {"vu_handbook_contents", "vu_handbook_search", "vu_handbook_get",
+                  "vu_lms_contents", "vu_lms_search", "vu_lms_get"}
 
 results: list[tuple[str, bool, str]] = []
 
@@ -66,11 +67,11 @@ async def test_single_session() -> None:
     async with streamablehttp_client(f"{BASE}/mcp") as (read, write, get_sid):
         async with ClientSession(read, write) as session:
             init = await session.initialize()
-            check("http: initialize", init.serverInfo.name == "vu-handbook", init.serverInfo.name)
+            check("http: initialize", init.serverInfo.name == "vu-student-support", init.serverInfo.name)
 
             tools = await session.list_tools()
             names = {t.name for t in tools.tools}
-            check("http: exactly 3 tools", names == EXPECTED_TOOLS, str(names))
+            check("http: exactly 6 tools", names == EXPECTED_TOOLS, str(names))
 
             res = await session.call_tool("vu_handbook_search", {"query": "how to submit assignment", "limit": 5})
             data = json.loads(res.content[0].text)
@@ -87,6 +88,12 @@ async def test_single_session() -> None:
                   page.get("id") == page_id
                   and len(page.get("content", "")) > 200
                   and "navigation" in page)
+
+            res = await session.call_tool("vu_lms_search", {"query": "challan payment modes", "limit": 3})
+            lms = json.loads(res.content[0].text)
+            check("http: lms search serves remotely",
+                  any(r["title"] == "Account Book" for r in lms["results"]),
+                  str([r["title"] for r in lms["results"]]))
 
             res = await session.call_tool("vu_handbook_contents", {"path": "", "depth": 1})
             toc = json.loads(res.content[0].text)
