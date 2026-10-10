@@ -1,0 +1,5 @@
+Scheme of Study - BS (Computer Science)
+Term	Course Code	Course Title	Credit Hours
+1	CS101	Introduction to Computing	3
+2	CS201	Data Structures	3
+3	MTH301	Business Mathematics	3

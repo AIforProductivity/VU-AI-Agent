@@ -8,3 +8,4 @@ data/.last-good/
 build/
 dist/
 *.egg-info/
+sessions/

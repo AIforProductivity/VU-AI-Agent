@@ -1,0 +1,9 @@
+# Lines dropped from every paste (exact match, case-insensitive).
+# Calibrate with REAL pastes: add one line per menu/hello/noise line you see.
+# One entry per line; lines starting with # are comments.
+
+My VULMS
+Logout
+Sign Out
+Help
+My VULMS	Grade Book	Logout

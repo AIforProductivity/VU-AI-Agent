@@ -1,0 +1,12 @@
+Course Selection
+Maximum Credit Hours: 18
+Minimum Credit Hours: 9
+
+New Courses
+CS201	Data Structures	3 Credit(s)
+MGT101	Principles of Management	3 Credit(s)
+
+Failed / Improvable Courses
+MTH301	Business Mathematics	Grade: F	3 Credit(s)
+
+Note: Credit limit applies to the current enrollment.

@@ -116,6 +116,28 @@ The image entrypoint is `mcp_server.py`, so any flag above can be appended.
 A `HEALTHCHECK` polls `/healthz`. The image ships the snapshot but not the
 crawler — refresh on the host with `tools/refresh.py`, then rebuild.
 
+## Paste ingestion (`ingest/`)
+
+The read-only front door of the support system (see `docs/VISION.md               initial product vision (v0.1, modifiable)
+ingest/                      paste ingestion: clean -> structure -> store
+tools/VISION.md`): the
+student copies a logged-in VULMS page and pastes it; we clean, structure and
+session-store it. No credentials are ever requested or handled.
+
+```bash
+python3 ingest/ingest.py --session s1 paste.txt     # -> vu-paste/1 JSON (+ stored)
+node ingest/ingest.js  --session s1 paste.txt       # identical output, JS twin
+python3 ingest/tests/test_ingest.py                 # 39 checks
+node    ingest/tests/test_ingest_js.js              # 47 cross-language parity checks
+```
+
+Cleaning removes HTML/ViewState junk, menu boilerplate (`boilerplate.txt` —
+calibrate with real pastes), mojibake, smart punctuation and whitespace
+noise, while preserving inner content (no course code is ever lost — tested).
+Structuring emits text, blocks, tables and lightweight facts (course codes,
+grades, credits, CGPA, dates) for agents to reason over. Student pastes land
+in `sessions/` (gitignored).
+
 ## Tools
 
 ### `vu_handbook_contents(path="", depth=2)`
