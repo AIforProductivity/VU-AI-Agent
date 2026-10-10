@@ -58,12 +58,20 @@ def test_gradebook() -> None:
     check("gradebook: cgpa extracted", e["facts"]["cgpa"]
           and e["facts"]["cgpa"][0]["value"] == 3.42, str(e["facts"]["cgpa"]))
     check("gradebook: credit mention found", any(m["value"] == 9 for m in e["facts"]["credit_mentions"]))
-    check("gradebook: one table parsed", len(e["tables"]) == 1
-          and e["tables"][0]["rows"][0][:2] == ["Course Code", "Course Title"])
+    lines = t.split("\n")
+    check("gradebook: anchor tabs kept as lines",
+          "Midterm Result (FALL 2026)" in lines and "Projected CGPA Calculator" in lines)
+    check("gradebook: one table parsed (grades)", len(e["tables"]) == 1
+          and e["tables"][0]["rows"][0][:2] == ["Course Code", "Course Title"],
+          str(len(e["tables"])))
     # exact golden for the cleaned text (determinism guard)
     golden = "\n".join([
         "Welcome, Ali Khan (BC230101234)",
-        "Student Grade Book",
+        "Student Grade Book",  # h1 + first anchor are adjacent duplicates -> deduped
+        "Midterm Result (FALL 2026)",
+        "Grading Scheme",
+        "Projected CGPA Calculator",
+        "COUM/DAC",
         "Course Code\tCourse Title\tMarks\tGrade\tGrade Point",
         "CS101\tIntroduction to Computing\t85\tA+\t4.00",
         "MTH301\tBusiness Mathematics\t62\tB\t3.00",
@@ -98,10 +106,17 @@ def test_study_scheme() -> None:
     c = ig.clean(raw)
     e = ig.structure(c["text"], stats=c["stats"])
     check("studyscheme: target detected", e["target"] == "study_scheme", e["target"])
-    check("studyscheme: tab table kept", len(e["tables"]) == 1
-          and e["tables"][0]["rows"][1] == ["1", "CS101", "Introduction to Computing", "3"],
-          str(e["tables"]))
-    check("studyscheme: codes found", {x["code"] for x in e["facts"]["courses"]} == {"CS101", "CS201", "MTH301"})
+    check("studyscheme: two semester tables kept", len(e["tables"]) == 2, str(len(e["tables"])))
+    check("studyscheme: empty columns preserved (alignment)",
+          e["tables"][0]["rows"][1] == ["CS101", "Introduction to Computing", "", "",
+                                        "Required", "Regular", "3", "", "", "Studied"],
+          str(e["tables"][0]["rows"][1]))
+    check("studyscheme: group pairing column kept",
+          e["tables"][1]["rows"][1][7] == "CS201CS201P (2)", str(e["tables"][1]["rows"][1]))
+    check("studyscheme: codes found",
+          {x["code"] for x in e["facts"]["courses"]} == {"CS101", "CS201", "CS202", "MTH301", "ENG201"})
+    check("studyscheme: no amount/credit false positives",
+          not e["facts"]["amounts"] and not e["facts"]["credit_mentions"])
     no_loss(raw, c["text"], "studyscheme")
 
 
@@ -135,6 +150,25 @@ def test_datesheet() -> None:
           and any(v.startswith("February") for v in values), str(values))
 
 
+def test_account_book() -> None:
+    raw = (FIX / "account_book.txt").read_text(encoding="utf-8")
+    c = ig.clean(raw)
+    e = ig.structure(c["text"], stats=c["stats"])
+    check("accountbook: target detected", e["target"] == "account_book", e["target"])
+    amounts = [a["value"] for a in e["facts"]["amounts"]]
+    check("accountbook: amounts extracted",
+          amounts == [12500, 0, 12500, 500, 500, 0, 500, 500, 0, 12500], str(amounts))
+    values = [d["value"] for d in e["facts"]["dates"]]
+    check("accountbook: due dates captured", values == ["15-11-2026", "01-10-2026", "01-10-2026"],
+          str(values))
+    check("accountbook: challan table parsed",
+          len(e["tables"]) == 1 and len(e["tables"][0]["rows"]) == 4
+          and e["tables"][0]["rows"][1][1] == "Installments_FS", str(e["tables"]))
+    check("accountbook: no course false positives",
+          not e["facts"]["courses"], str(e["facts"]["courses"]))
+    no_loss(raw, c["text"], "accountbook")
+
+
 def test_cli_and_store() -> None:
     with tempfile.TemporaryDirectory() as tmp:
         env = {**os.environ, "VU_PASTE_SESSIONS": tmp}
@@ -159,6 +193,7 @@ def main() -> int:
     test_study_scheme()
     test_home_courses()
     test_datesheet()
+    test_account_book()
     test_cli_and_store()
     failed = [r for r in results if not r[1]]
     print("=" * 60)

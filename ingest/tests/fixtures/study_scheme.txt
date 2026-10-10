@@ -1,5 +1,15 @@
-Scheme of Study - BS (Computer Science)
-Term	Course Code	Course Title	Credit Hours
-1	CS101	Introduction to Computing	3
-2	CS201	Data Structures	3
-3	MTH301	Business Mathematics	3
+My Study Scheme
+Degree: BS
+Program: Software Engineering
+Version: Fall 2024 (2404)
+
+Semester 1
+Code	Title	Category	Sub Category	Type	Course Type	Cr.Hrs.	Group	Specialization	Status
+CS101	Introduction to Computing			Required	Regular	3			Studied
+MTH301	Business Mathematics			Required	Regular	3			Studied
+ENG201	Business & Technical English			Required	Regular	3			Studied
+
+Semester 2
+Code	Title	Category	Sub Category	Type	Course Type	Cr.Hrs.	Group	Specialization	Status
+CS201	Data Structures			Required	Regular	3	CS201CS201P (2)		Studied
+CS202	Introduction to Web Technologies			Required	Regular	3			Pending

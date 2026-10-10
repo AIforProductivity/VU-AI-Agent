@@ -168,6 +168,7 @@ TARGET_KEYWORDS = {
     "datesheet": ["date sheet", "datesheet", "exam schedule", "rescheduling"],
     "home_courses": ["current registered courses", "registered courses", "my courses"],
     "support": ["support system", "support request"],
+    "account_book": ["account book", "challan", "payable"],
 }
 
 _COURSE_RE = re.compile(r"\b([A-Z]{2,4}\d{3})\b")
@@ -186,6 +187,7 @@ _DATE_RE = re.compile(
     r"|[A-Za-z]{3,9}\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{4})\b")
 # grade tokens; lookahead avoids matching inside codes like CS101/DMC/GPA
 _GRADE_RE = re.compile(r"(?<![A-Za-z])(?:A\+|A|B\+|B|C\+|C|D|F|W|I)(?![A-Za-z0-9])")
+_AMOUNT_RE = re.compile(r"\bRs\.?\s*([\d,]+(?:\.\d{1,2})?)")
 
 
 def detect_target(text: str) -> str:
@@ -204,12 +206,17 @@ def _tables(lines: list[str]) -> list[dict]:
     for line in lines + [""]:
         if "\t" in line and line.strip("\t "):
             cells = [c.strip() for c in line.split("\t")]
-            cur.append([c for c in cells if c])
+            cur.append(cells)  # keep empty cells so columns stay aligned
         else:
-            if len(cur) >= 1 and all(len(r) >= 2 for r in cur):
+            if len(cur) >= 1 and all(len(r) >= 2 and any(r) for r in cur):
                 tables.append({"rows": cur})
             cur = []
     return tables
+
+
+def _amount_value(m: re.Match):
+    v = float(m.group(1).replace(",", ""))
+    return int(v) if v.is_integer() else v
 
 
 def _facts(lines: list[str]) -> dict:
@@ -217,6 +224,7 @@ def _facts(lines: list[str]) -> dict:
     cgpa: list[dict] = []
     dates: list[dict] = []
     credit_mentions: list[dict] = []
+    amounts: list[dict] = []
     for line in lines:
         for m in _COURSE_RE.finditer(line):
             entry = courses.setdefault(
@@ -231,13 +239,15 @@ def _facts(lines: list[str]) -> dict:
         c = _CREDIT_RE.search(line)
         if c:
             credit_mentions.append({"value": _credit_value(c), "context": line[:160]})
+        for m in _AMOUNT_RE.finditer(line):
+            amounts.append({"value": _amount_value(m), "context": line[:160]})
         for m in _CGPA_RE.finditer(line):
             cgpa.append({"label": m.group(1), "value": float(m.group(2)), "context": line[:160]})
         for m in _DATE_RE.finditer(line):
             start = max(0, m.start() - 30)
             dates.append({"value": m.group(1), "context": line[start:m.end() + 30]})
     return {"courses": list(courses.values()), "cgpa": cgpa, "dates": dates,
-            "credit_mentions": credit_mentions}
+            "credit_mentions": credit_mentions, "amounts": amounts}
 
 
 def structure(cleaned_text: str, target: str = "auto", url: str | None = None,

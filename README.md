@@ -119,6 +119,7 @@ crawler — refresh on the host with `tools/refresh.py`, then rebuild.
 ## Paste ingestion (`ingest/`)
 
 The read-only front door of the support system (see `docs/VISION.md               initial product vision (v0.1, modifiable)
+docs/lms/VU_LMS_Guide.md     full VULMS reverse-engineering map (15 sections)
 ingest/                      paste ingestion: clean -> structure -> store
 tools/VISION.md`): the
 student copies a logged-in VULMS page and pastes it; we clean, structure and

@@ -1,0 +1,8 @@
+My Account Book
+
+Challan No.	Challan Type	Payable	Paid	Balance	Due Date	Payment Mode
+1234567	Installments_FS	Rs 12,500	Rs 0	Rs 12,500	15-11-2026	TMFBLOnline
+1234560	SocietiesAndSportsFund	Rs 500	Rs 500	Rs 0	01-10-2026	HBLIPG
+1234555	EndowmentFund	Rs 500	Rs 500	Rs 0	01-10-2026	ChallanForm
+
+Total Payable Amount: Rs 12,500

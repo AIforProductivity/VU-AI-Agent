@@ -146,6 +146,7 @@ const TARGET_KEYWORDS = {
   datesheet: ["date sheet", "datesheet", "exam schedule", "rescheduling"],
   home_courses: ["current registered courses", "registered courses", "my courses"],
   support: ["support system", "support request"],
+  account_book: ["account book", "challan", "payable"],
 };
 
 const COURSE_RE = /\b([A-Z]{2,4}\d{3})\b/g;
@@ -154,6 +155,7 @@ const CREDIT_RE = /\b(?:(\d{1,2})\s*Credit(?:\s*\(s\))?|Credit(?:\s*\(s\))?\s*(?
 const CGPA_RE = /\b(CGPA|GPA)\s*[:\-]?\s*(\d\.\d{1,3})\b/g;
 const DATE_RE = /\b(\d{1,2}[-\/][A-Za-z]{3,9}[-\/]\d{2,4}|\d{1,2}[-\/]\d{1,2}[-\/]\d{2,4}|\d{4}[-\/]\d{1,2}[-\/]\d{1,2}|[A-Za-z]{3,9}\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{4})\b/g;
 const GRADE_RE = /(?<![A-Za-z])(?:A\+|A|B\+|B|C\+|C|D|F|W|I)(?![A-Za-z0-9])/g;
+const AMOUNT_RE = /\bRs\.?\s*([\d,]+(?:\.\d{1,2})?)/g;
 
 function detectTarget(text) {
   const low = text.toLowerCase();
@@ -171,19 +173,24 @@ function tablesOf(lines) {
   let cur = [];
   for (const line of [...lines, ""]) {
     if (line.includes("\t") && line.replace(/[\t ]/g, "").length) {
-      const cells = line.split("\t").map((c) => c.trim()).filter(Boolean);
-      cur.push(cells);
+      const cells = line.split("\t").map((c) => c.trim());
+      cur.push(cells); // keep empty cells so columns stay aligned (parity with .py)
     } else {
-      if (cur.length >= 1 && cur.every((r) => r.length >= 2)) tables.push({ rows: cur });
+      if (cur.length >= 1 && cur.every((r) => r.length >= 2 && r.some((c) => c))) tables.push({ rows: cur });
       cur = [];
     }
   }
   return tables;
 }
 
+function amountValue(m) {
+  const v = parseFloat(m[1].replace(/,/g, ""));
+  return Number.isInteger(v) ? v : v;
+}
+
 function factsOf(lines) {
   const courses = new Map();
-  const cgpa = [], dates = [], creditMentions = [];
+  const cgpa = [], dates = [], creditMentions = [], amounts = [];
   for (const line of lines) {
     for (const m of line.matchAll(COURSE_RE)) {
       if (!courses.has(m[1])) courses.set(m[1], { code: m[1], grade: null, credits: null, context: line.slice(0, 200) });
@@ -198,6 +205,9 @@ function factsOf(lines) {
     CREDIT_RE.lastIndex = 0;
     const c = CREDIT_RE.exec(line);
     if (c) creditMentions.push({ value: parseInt(c[1] ?? c[2], 10), context: line.slice(0, 160) });
+    for (const m of line.matchAll(AMOUNT_RE)) {
+      amounts.push({ value: amountValue(m), context: line.slice(0, 160) });
+    }
     for (const m of line.matchAll(CGPA_RE)) {
       cgpa.push({ label: m[1], value: parseFloat(m[2]), context: line.slice(0, 160) });
     }
@@ -211,6 +221,7 @@ function factsOf(lines) {
     cgpa,
     dates,
     credit_mentions: creditMentions,
+    amounts,
   };
 }
 

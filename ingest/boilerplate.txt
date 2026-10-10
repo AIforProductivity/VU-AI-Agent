@@ -7,3 +7,7 @@ Logout
 Sign Out
 Help
 My VULMS	Grade Book	Logout
+My Profile
+Change Password
+My Logins History
+Contact Us
